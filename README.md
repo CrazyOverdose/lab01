@@ -85,7 +85,7 @@ $ cat > ~/.gistup.json <<EOF
 {
   "token": "${GIST_TOKEN}"
 }
-EOF      #конец файла
+EOF
 ```
 
 ## Report
