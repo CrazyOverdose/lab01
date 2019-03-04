@@ -17,11 +17,11 @@ $ alias edit=nano
 ```
 
 ```ShellSession
-$ mkdir -p ${GITHUB_USERNAME}/workspace 
-$ cd ${GITHUB_USERNAME}/workspace
-$ pwd
+$ mkdir -p ${GITHUB_USERNAME}/workspace #команда для создания новых каталогов
+$ cd ${GITHUB_USERNAME}/workspace       #изменение текущего рабочего каталога
+$ pwd                                   #выводит полный путь от корневого каталога к текущему рабочему каталог                                   
 /home/pcd09/CrazyOverdose/workspace
-$ cd ..
+$ cd ..   #переход на директорию выше
 $ pwd
 /home/pcd09/CrazyOverdose
 ```
@@ -35,7 +35,7 @@ $ cd workspace
 
 ```ShellSession
 # Debian
-$ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+$ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz    #утилита для скачивания
 --2019-03-04 18:36:48--  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
 Распознаётся nodejs.org (nodejs.org)… 104.20.22.46, 104.20.23.46, 2606:4700:10::6814:172e, ...
 Подключение к nodejs.org (nodejs.org)|104.20.22.46|:443... соединение установлено.
@@ -46,28 +46,28 @@ HTTP-запрос отправлен. Ожидание ответа… 200 OK
 node-v6.11.5-linux-x64.tar. 100%[=========================================>]   8,92M  7,45MB/s    in 1,2s    
 
 2019-03-04 18:36:50 (7,45 MB/s) - «node-v6.11.5-linux-x64.tar.xz» сохранён [9356460/9356460]
-$ tar -xf node-v6.11.5-linux-x64.tar.xz
-$ rm -rf node-v6.11.5-linux-x64.tar.xz
-$ mv node-v6.11.5-linux-x64 node
+$ tar -xf node-v6.11.5-linux-x64.tar.xz   #встроенный архиватор
+$ rm -rf node-v6.11.5-linux-x64.tar.xz    #удаление файлов
+$ mv node-v6.11.5-linux-x64 node          #утилита для перемещения/переименованрия файлов
 ```
 
 ```ShellSession
-$ ls node/bin
+$ ls node/bin       #утилита, которая печатает в стандартный вывод содержимое каталогов
 node  npm
-$ echo ${PATH}
+$ echo ${PATH}      #команда для отображения строки текста
 /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
-$ export PATH=${PATH}:`pwd`/node/bin
+$ export PATH=${PATH}:`pwd`/node/bin  # 
 $ echo ${PATH}
 /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/pcd09/CrazyOverdose/workspace/node/bin
 $ mkdir scripts
-$ cat > scripts/activate<<EOF
+$ cat > scripts/activate<<EOF   #утилита UNIX, выводящая последовательно указанные файлы (или устройства)
 export PATH=\${PATH}:`pwd`/node/bin
 EOF
-$ source scripts/activate
+$ source scripts/activate             #
 ```
 
 ```ShellSession
-$ npm install -g gistup
+$ npm install -g gistup                #
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup-rename -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-rename
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup-open -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-open
