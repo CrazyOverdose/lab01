@@ -56,18 +56,18 @@ $ ls node/bin       #утилита, которая печатает в стан
 node  npm
 $ echo ${PATH}      #команда для отображения строки текста
 /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
-$ export PATH=${PATH}:`pwd`/node/bin  # 
+$ export PATH=${PATH}:`pwd`/node/bin  #команда командной оболочки UNIX, добавляющая переменную в среду окружения.
 $ echo ${PATH}
 /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/pcd09/CrazyOverdose/workspace/node/bin
 $ mkdir scripts
 $ cat > scripts/activate<<EOF   #утилита UNIX, выводящая последовательно указанные файлы (или устройства)
 export PATH=\${PATH}:`pwd`/node/bin
 EOF
-$ source scripts/activate             #
+$ source scripts/activate             #читает и выполняет команды из указанного файла в командном процессоре
 ```
 
 ```ShellSession
-$ npm install -g gistup                #
+$ npm install -g gistup                #скачивание пакета вручную
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup-rename -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-rename
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup-open -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-open
@@ -85,7 +85,7 @@ $ cat > ~/.gistup.json <<EOF
 {
   "token": "${GIST_TOKEN}"
 }
-EOF
+EOF      #конец файла
 ```
 
 ## Report
