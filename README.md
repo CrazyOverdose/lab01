@@ -4,24 +4,26 @@
 
 ## Tasks
 
-- [ ] 1. Ознакомиться со ссылками учебного материала
-- [ ] 2. Выполнить инструкцию учебного материала
-- [ ] 3. Составить отчет и отправить ссылку личным сообщением в **Slack**
+- [x] 1. Ознакомиться со ссылками учебного материала
+- [x] 2. Выполнить инструкцию учебного материала
+- [x] 3. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
 
 ```bash
-$ export GITHUB_USERNAME=<имя_пользователя>
-$ export GIST_TOKEN=<сохраненный_токен>
-$ alias edit=<nano|vi|vim|subl>
+$ export GITHUB_USERNAME=СrazyOverdose
+$ export GIST_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+$ alias edit=nano
 ```
 
 ```ShellSession
-$ mkdir -p ${GITHUB_USERNAME}/workspace
+$ mkdir -p ${GITHUB_USERNAME}/workspace 
 $ cd ${GITHUB_USERNAME}/workspace
 $ pwd
+/home/pcd09/CrazyOverdose/workspace
 $ cd ..
 $ pwd
+/home/pcd09/CrazyOverdose
 ```
 
 ```ShellSession
@@ -34,6 +36,16 @@ $ cd workspace
 ```ShellSession
 # Debian
 $ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+--2019-03-04 18:36:48--  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+Распознаётся nodejs.org (nodejs.org)… 104.20.22.46, 104.20.23.46, 2606:4700:10::6814:172e, ...
+Подключение к nodejs.org (nodejs.org)|104.20.22.46|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+Длина: 9356460 (8,9M) [application/x-xz]
+Сохранение в: «node-v6.11.5-linux-x64.tar.xz»
+
+node-v6.11.5-linux-x64.tar. 100%[=========================================>]   8,92M  7,45MB/s    in 1,2s    
+
+2019-03-04 18:36:50 (7,45 MB/s) - «node-v6.11.5-linux-x64.tar.xz» сохранён [9356460/9356460]
 $ tar -xf node-v6.11.5-linux-x64.tar.xz
 $ rm -rf node-v6.11.5-linux-x64.tar.xz
 $ mv node-v6.11.5-linux-x64 node
@@ -41,9 +53,12 @@ $ mv node-v6.11.5-linux-x64 node
 
 ```ShellSession
 $ ls node/bin
+node  npm
 $ echo ${PATH}
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
 $ export PATH=${PATH}:`pwd`/node/bin
 $ echo ${PATH}
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/pcd09/CrazyOverdose/workspace/node/bin
 $ mkdir scripts
 $ cat > scripts/activate<<EOF
 export PATH=\${PATH}:`pwd`/node/bin
@@ -53,7 +68,16 @@ $ source scripts/activate
 
 ```ShellSession
 $ npm install -g gistup
+/home/pcd09/CrazyOverdose/workspace/node/bin/gistup-rename -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-rename
+/home/pcd09/CrazyOverdose/workspace/node/bin/gistup -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup
+/home/pcd09/CrazyOverdose/workspace/node/bin/gistup-open -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-open
+/home/pcd09/CrazyOverdose/workspace/node/lib
+└─┬ gistup@0.1.3 
+  ├─┬ optimist@0.3.7 
+  │ └── wordwrap@0.0.3 
+  └── queue-async@1.2.1 
 $ ls node/bin
+gistup  gistup-open  gistup-rename  node  npm
 ```
 
 ```ShellSession
