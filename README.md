@@ -15,7 +15,7 @@ $ export GITHUB_USERNAME=СrazyOverdose
 $ export GIST_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 $ alias edit=nano
 ```
-Создание нового каталога, который станет рабочей областью
+```Создание нового каталога, который станет рабочей областью
 
 $ mkdir -p ${GITHUB_USERNAME}/workspace #команда для создания новых каталогов
 $ cd ${GITHUB_USERNAME}/workspace       #изменение текущего рабочего каталога
