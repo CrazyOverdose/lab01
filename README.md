@@ -9,7 +9,7 @@
 - [x] 3. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
-
+Установка переменных окружения,создание другой версии команды
 ```bash
 $ export GITHUB_USERNAME=СrazyOverdose
 $ export GIST_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -19,20 +19,19 @@ $ alias edit=nano
 ```
 $ mkdir -p ${GITHUB_USERNAME}/workspace #команда для создания новых каталогов
 $ cd ${GITHUB_USERNAME}/workspace       #изменение текущего рабочего каталога
-$ pwd                                   #выводит полный путь от корневого каталога к текущему рабочему каталог                                   
-/home/pcd09/CrazyOverdose/workspace
+$ pwd                                   #выводит полный путь от корневого каталога к текущему рабочему каталог                            /home/pcd09/CrazyOverdose/workspace
 $ cd ..   #переход на директорию выше
 $ pwd
 /home/pcd09/CrazyOverdose
 ```
-
+Создание в уже созданном каталоге новых каталогов
 ```ShellSession
 $ mkdir -p workspace/tasks/
 $ mkdir -p workspace/projects/
 $ mkdir -p workspace/reports/
 $ cd workspace
 ```
-
+Скачивание и распаковка nodejs в созданную рабочую область
 ```ShellSession
 # Debian
 $ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz    #утилита для скачивания
@@ -50,7 +49,7 @@ $ tar -xf node-v6.11.5-linux-x64.tar.xz   #встроенный архивато
 $ rm -rf node-v6.11.5-linux-x64.tar.xz    #удаление файлов
 $ mv node-v6.11.5-linux-x64 node          #утилита для перемещения/переименованрия файлов
 ```
-
+Дописывание в PATH путь к скачанному nodejs
 ```ShellSession
 $ ls node/bin       #утилита, которая печатает в стандартный вывод содержимое каталогов
 node  npm
@@ -65,7 +64,7 @@ export PATH=\${PATH}:`pwd`/node/bin
 EOF
 $ source scripts/activate             #читает и выполняет команды из указанного файла в командном процессоре
 ```
-
+Скачивание gistup 
 ```ShellSession
 $ npm install -g gistup                #скачивание пакета вручную
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup-rename -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-rename
@@ -79,7 +78,7 @@ $ npm install -g gistup                #скачивание пакета вру
 $ ls node/bin
 gistup  gistup-open  gistup-rename  node  npm
 ```
-
+Записывание текста в файл gistup.json 
 ```ShellSession
 $ cat > ~/.gistup.json <<EOF
 {
