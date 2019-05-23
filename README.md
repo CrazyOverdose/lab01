@@ -79,7 +79,8 @@ $ source scripts/activate  #читает и выполняет команды и
 Скачивание gistup 
 ```ShellSession
 $ npm install -g gistup                #скачивание пакета вручную
-/home/pcd09/CrazyOverdose/workspace/node/bin/gistup-rename -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-rename
+/home/pcd09/CrazyOverdose/workspace/node/bin/gistup-rename -> 
+/home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-rename
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup -> 
 /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup-open -> 
