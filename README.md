@@ -19,7 +19,9 @@ $ alias edit=nano
 ```
 $ mkdir -p ${GITHUB_USERNAME}/workspace #команда для создания новых каталогов
 $ cd ${GITHUB_USERNAME}/workspace       #изменение текущего рабочего каталога
-$ pwd                                   #выводит полный путь от корневого каталога к текущему рабочему каталог                            /home/pcd09/CrazyOverdose/workspace
+$ pwd                                   #выводит полный путь от корневого 
+                                        #каталога к текущему рабочему каталог                            
+/home/pcd09/CrazyOverdose/workspace
 $ cd ..   #переход на директорию выше
 $ pwd
 /home/pcd09/CrazyOverdose
@@ -33,43 +35,55 @@ $ cd workspace
 ```
 Скачивание и распаковка nodejs в созданную рабочую область
 ```ShellSession
-# Debian
-$ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz    #утилита для скачивания
+# Debian 
+$ wget https://nodejs.org/dist/v6.11.5/        #утилита для скачивания
+node-v6.11.5-linux-x64.tar.xz                      
 --2019-03-04 18:36:48--  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
-Распознаётся nodejs.org (nodejs.org)… 104.20.22.46, 104.20.23.46, 2606:4700:10::6814:172e, ...
+Распознаётся nodejs.org (nodejs.org)… 
+104.20.22.46, 104.20.23.46, 2606:4700:10::6814:172e, ...
 Подключение к nodejs.org (nodejs.org)|104.20.22.46|:443... соединение установлено.
 HTTP-запрос отправлен. Ожидание ответа… 200 OK
 Длина: 9356460 (8,9M) [application/x-xz]
 Сохранение в: «node-v6.11.5-linux-x64.tar.xz»
 
-node-v6.11.5-linux-x64.tar. 100%[=========================================>]   8,92M  7,45MB/s    in 1,2s    
-
-2019-03-04 18:36:50 (7,45 MB/s) - «node-v6.11.5-linux-x64.tar.xz» сохранён [9356460/9356460]
+node-v6.11.5-linux-x64.tar. 100%[=========================================>]  
+8,92M  7,45MB/s    in 1,2s    
+2019-03-04 18:36:50 (7,45 MB/s) - «node-v6.11.5-linux-x64.tar.xz» 
+сохранён [9356460/9356460]
 $ tar -xf node-v6.11.5-linux-x64.tar.xz   #встроенный архиватор
 $ rm -rf node-v6.11.5-linux-x64.tar.xz    #удаление файлов
-$ mv node-v6.11.5-linux-x64 node          #утилита для перемещения/переименованрия файлов
+$ mv node-v6.11.5-linux-x64 node          #утилита для перемещения/переименования файлов
 ```
 Дописывание в PATH путь к скачанному nodejs
 ```ShellSession
 $ ls node/bin       #утилита, которая печатает в стандартный вывод содержимое каталогов
 node  npm
 $ echo ${PATH}      #команда для отображения строки текста
-/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
-$ export PATH=${PATH}:`pwd`/node/bin  #команда командной оболочки UNIX, добавляющая переменную в среду окружения.
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:
+/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:
+/usr/lib/jvm/java-8-oracle/jre/bin
+$ export PATH=${PATH}:`pwd`/node/bin  #команда командной оболочки UNIX, 
+                                      #добавляющая переменную в среду окружения.
 $ echo ${PATH}
-/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/pcd09/CrazyOverdose/workspace/node/bin
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:
+/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:
+/home/pcd09/CrazyOverdose/workspace/node/bin
 $ mkdir scripts
-$ cat > scripts/activate<<EOF   #утилита UNIX, выводящая последовательно указанные файлы (или устройства)
+$ cat > scripts/activate<<EOF #утилита UNIX, 
+                              #выводящая последовательно указанные файлы (или устройства)
 export PATH=\${PATH}:`pwd`/node/bin
 EOF
-$ source scripts/activate             #читает и выполняет команды из указанного файла в командном процессоре
+$ source scripts/activate  #читает и выполняет команды из 
+                           #указанного файла в командном процессоре
 ```
 Скачивание gistup 
 ```ShellSession
 $ npm install -g gistup                #скачивание пакета вручную
 /home/pcd09/CrazyOverdose/workspace/node/bin/gistup-rename -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-rename
-/home/pcd09/CrazyOverdose/workspace/node/bin/gistup -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup
-/home/pcd09/CrazyOverdose/workspace/node/bin/gistup-open -> /home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-open
+/home/pcd09/CrazyOverdose/workspace/node/bin/gistup -> 
+/home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup
+/home/pcd09/CrazyOverdose/workspace/node/bin/gistup-open -> 
+/home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-open
 /home/pcd09/CrazyOverdose/workspace/node/lib
 └─┬ gistup@0.1.3 
   ├─┬ optimist@0.3.7 
