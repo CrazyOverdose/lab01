@@ -21,10 +21,10 @@ $ mkdir -p ${GITHUB_USERNAME}/workspace #команда для создания 
 $ cd ${GITHUB_USERNAME}/workspace       #изменение текущего рабочего каталога
 $ pwd                                   #выводит полный путь от корневого 
                                         #каталога к текущему рабочему каталог                            
-/home/pcd09/CrazyOverdose/workspace
+/home/absinthetoxin/СrazyOverdose/workspace
 $ cd ..   #переход на директорию выше
 $ pwd
-/home/pcd09/CrazyOverdose
+/home/absinthetoxin/CrazyOverdose
 ```
 Создание в уже созданном каталоге новых каталогов
 ```ShellSession
@@ -36,20 +36,18 @@ $ cd workspace
 Скачивание и распаковка nodejs в созданную рабочую область
 ```ShellSession
 # Debian 
-$ wget https://nodejs.org/dist/v6.11.5/        #утилита для скачивания
-node-v6.11.5-linux-x64.tar.xz                      
---2019-03-04 18:36:48--  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
-Распознаётся nodejs.org (nodejs.org)… 
-104.20.22.46, 104.20.23.46, 2606:4700:10::6814:172e, ...
-Подключение к nodejs.org (nodejs.org)|104.20.22.46|:443... соединение установлено.
+$ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz                      
+--2019-06-09 15:43:25--  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
+Распознаётся nodejs.org (nodejs.org)… 104.20.23.46, 104.20.22.46, 2606:4700:10::6814:162e, ...
+Подключение к nodejs.org (nodejs.org)|104.20.23.46|:443... соединение установлено.
 HTTP-запрос отправлен. Ожидание ответа… 200 OK
 Длина: 9356460 (8,9M) [application/x-xz]
 Сохранение в: «node-v6.11.5-linux-x64.tar.xz»
 
-node-v6.11.5-linux-x64.tar. 100%[=========================================>]  
-8,92M  7,45MB/s    in 1,2s    
-2019-03-04 18:36:50 (7,45 MB/s) - «node-v6.11.5-linux-x64.tar.xz» 
-сохранён [9356460/9356460]
+node-v6.11.5-linux- 100%[===================>]   8,92M  8,73MB/s    за 1,0s    
+
+2019-06-09 15:43:26 (8,73 MB/s) - «node-v6.11.5-linux-x64.tar.xz» сохранён [9356460/9356460]
 $ tar -xf node-v6.11.5-linux-x64.tar.xz   #встроенный архиватор
 $ rm -rf node-v6.11.5-linux-x64.tar.xz    #удаление файлов
 $ mv node-v6.11.5-linux-x64 node          #утилита для перемещения/переименования файлов
@@ -59,15 +57,14 @@ $ mv node-v6.11.5-linux-x64 node          #утилита для перемещ�
 $ ls node/bin       #утилита, которая печатает в стандартный вывод содержимое каталогов
 node  npm
 $ echo ${PATH}      #команда для отображения строки текста
-/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:
-/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:
-/usr/lib/jvm/java-8-oracle/jre/bin
+/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:
+/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 $ export PATH=${PATH}:`pwd`/node/bin  #команда командной оболочки UNIX, 
                                       #добавляющая переменную в среду окружения.
 $ echo ${PATH}
-/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:
-/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:
-/home/pcd09/CrazyOverdose/workspace/node/bin
+/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/
+bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/
+bin/core_perl:/home/absinthetoxin/workspace/node/bin
 $ mkdir scripts
 $ cat > scripts/activate<<EOF #утилита UNIX, 
                               #выводящая последовательно указанные файлы (или устройства)
@@ -79,13 +76,13 @@ $ source scripts/activate  #читает и выполняет команды и
 Скачивание gistup 
 ```ShellSession
 $ npm install -g gistup                #скачивание пакета вручную
-/home/pcd09/CrazyOverdose/workspace/node/bin/gistup-rename -> 
-/home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-rename
-/home/pcd09/CrazyOverdose/workspace/node/bin/gistup -> 
-/home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup
-/home/pcd09/CrazyOverdose/workspace/node/bin/gistup-open -> 
-/home/pcd09/CrazyOverdose/workspace/node/lib/node_modules/gistup/bin/gistup-open
-/home/pcd09/CrazyOverdose/workspace/node/lib
+/home/absinthetoxin/workspace/node/bin/gistup -> 
+/home/absinthetoxin/workspace/node/lib/node_modules/gistup/bin/gistup
+/home/absinthetoxin/workspace/node/bin/gistup-open -> 
+/home/absinthetoxin/workspace/node/lib/node_modules/gistup/bin/gistup-open
+/home/absinthetoxin/workspace/node/bin/gistup-rename -> 
+/home/absinthetoxin/workspace/node/lib/node_modules/gistup/bin/gistup-rename
+/home/absinthetoxin/workspace/node/lib
 └─┬ gistup@0.1.3 
   ├─┬ optimist@0.3.7 
   │ └── wordwrap@0.0.3 
